@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import '../widgets/text.dart';
-import 'lock_saving.dart';
+import 'open_account.dart';
 
 
-class Mshwari extends StatelessWidget {
-  const Mshwari({Key? key}) : super(key: key);
+class LockSaving extends StatelessWidget {
+  const LockSaving({Key? key}) : super(key: key);
 
   Widget _buildMenuOption(String text) {
     return Column(
@@ -44,7 +43,7 @@ class Mshwari extends StatelessWidget {
         backgroundColor: Colors.black.withOpacity(0.9),
         title: Padding(
           padding: const EdgeInsets.only(top: 30,left: 20),
-          child: Text("My Account",style: TextStyle(
+          child: Text("Lock Savings Account",style: TextStyle(
             color: Colors.white,
             fontSize: 21,
           ),),
@@ -60,31 +59,17 @@ class Mshwari extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             GestureDetector(
-                onTap: (){
-                  Get.to(()=>MyTextFieldScreen(text: 'Enter Amount', keyboardType: KeyboardType.numeric,));
-                },
-                child: Container(
-                  color: Colors.black.withOpacity(0),
+              onTap: (){
+                Get.to(()=>OpenAccount());
+              },
+              child: Container(
                   width: double.maxFinite,
-                    child: _buildMenuOption("Send to M-Shwari"))),
-            GestureDetector(
-                onTap: (){
-                  Get.to(()=>MyTextFieldScreen(text: 'Enter Amount', keyboardType: KeyboardType.numeric,));
-                },
-                child: Container(
-                    color: Colors.black.withOpacity(0),
-                    width: double.maxFinite,
-                    child: _buildMenuOption("Withdraw from M-Shwari"))),
-            GestureDetector(
-                onTap: (){
-                  Get.to(()=>LockSaving());
-                },
-                child: Container(
-                    color: Colors.black.withOpacity(0),
-                    width: double.maxFinite,
-                    child: _buildMenuOption("Lock Savings Account",))),
-            _buildMenuOption("Loan @ 9% for 30 days",),
-            _buildMenuOption("Check Balance",),
+                  color: Colors.black.withOpacity(0),
+                  child: _buildMenuOption("Open Account")),
+            ),
+            _buildMenuOption("Save",),
+            _buildMenuOption("Withdraw",),
+            _buildMenuOption("Check Balace",),
             _buildMenuOption("Mini Statement",),
           ],
         ),
