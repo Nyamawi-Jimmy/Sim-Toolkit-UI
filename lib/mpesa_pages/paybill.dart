@@ -5,10 +5,11 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:sim_toolkit/mpesa_pages/send.dart';
 
 import '../safaricom_pages/safaricom.dart';
+import '../widgets/text.dart';
 
 
-class MainPage extends StatelessWidget {
-  const MainPage({Key? key}) : super(key: key);
+class PayBill extends StatelessWidget {
+  const PayBill({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class MainPage extends StatelessWidget {
         title: Padding(
           padding: EdgeInsets.only(left: 20, top: 20),
           child: Text(
-            'Safaricom',
+            'SIM Card Apps',
             style: TextStyle(
               color: Colors.white,
             ),
@@ -44,17 +45,22 @@ class MainPage extends StatelessWidget {
             // Safaricom
             GestureDetector(
               onTap: (){
-                Get.to(()=>SafaricomPage());
+                Get.to(()=>MyTextFieldScreen(text: 'Name', keyboardType: KeyboardType.alphabetic,));
               }
               ,
-              child: Container(
-                width: double.maxFinite,
-                margin: EdgeInsets.only(top: 20, left: 10, bottom: 15),
-                child: Text(
-                  "Safaricom+",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
+              child: GestureDetector(
+                onTap: (){
+                  Get.to(()=>MyTextFieldScreen(text: 'Enter Name', keyboardType: KeyboardType.numeric,));
+                },
+                child: Container(
+                  width: double.maxFinite,
+                  margin: EdgeInsets.only(top: 20, left: 10, bottom: 15),
+                  child: Text(
+                    "Search Sim Contacts",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
                   ),
                 ),
               ),
@@ -77,17 +83,10 @@ class MainPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "M-PESA",
+                      "Enter Business Number",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
-                      ),
-                    ),
-                    Text(
-                      "Display text",
-                      style: TextStyle(
-                        color: Colors.white.withOpacity(0.7),
-                        fontSize: 15,
                       ),
                     ),
                   ],

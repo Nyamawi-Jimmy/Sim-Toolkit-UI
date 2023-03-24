@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
+import 'kcb_mpesa.dart';
 import 'mshwari.dart';
 
 class LoansSavings extends StatelessWidget {
@@ -61,23 +62,28 @@ class LoansSavings extends StatelessWidget {
               color: Colors.grey,
             ),
             // mpesa
-           Container(
-                color: Colors.black.withOpacity(0),
-                width: double.maxFinite,
-                margin: EdgeInsets.only(left: 10, top: 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "KCB M-PESA",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
+           GestureDetector(
+             onTap: (){
+               Get.to(()=>KCBMPESA());
+             },
+             child: Container(
+                  color: Colors.black.withOpacity(0),
+                  width: double.maxFinite,
+                  margin: EdgeInsets.only(left: 10, top: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "KCB M-PESA",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
+           ),
 
           ],
         ),

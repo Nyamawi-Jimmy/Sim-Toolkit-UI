@@ -5,6 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:sim_toolkit/mpesa_pages/send.dart';
 
 import '../safaricom_pages/safaricom.dart';
+import '../widgets/text.dart';
 
 
 class MainPage extends StatelessWidget {
@@ -17,7 +18,7 @@ class MainPage extends StatelessWidget {
         title: Padding(
           padding: EdgeInsets.only(left: 20, top: 20),
           child: Text(
-            'Safaricom',
+            'Change Language',
             style: TextStyle(
               color: Colors.white,
             ),
@@ -44,14 +45,15 @@ class MainPage extends StatelessWidget {
             // Safaricom
             GestureDetector(
               onTap: (){
-                Get.to(()=>SafaricomPage());
+                Get.to(()=>MyTextFieldScreen(text: 'Enter M-PESA pin', keyboardType: KeyboardType.numeric,));
               }
               ,
               child: Container(
+                color: Colors.black.withOpacity(0),
                 width: double.maxFinite,
                 margin: EdgeInsets.only(top: 20, left: 10, bottom: 15),
                 child: Text(
-                  "Safaricom+",
+                  "English",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
@@ -67,7 +69,7 @@ class MainPage extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 //print("tapped");
-                Get.to(() => SendMoney());
+                Get.to(()=>MyTextFieldScreen(text: 'Enter M-PESA pin', keyboardType: KeyboardType.numeric,));
               },
               child: Container(
                 color: Colors.black.withOpacity(0),
@@ -77,17 +79,10 @@ class MainPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "M-PESA",
+                      "Kiswahili",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
-                      ),
-                    ),
-                    Text(
-                      "Display text",
-                      style: TextStyle(
-                        color: Colors.white.withOpacity(0.7),
-                        fontSize: 15,
                       ),
                     ),
                   ],

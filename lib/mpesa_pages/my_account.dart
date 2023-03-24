@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import '../widgets/text.dart';
 
 
 class MyAccount extends StatelessWidget {
@@ -54,11 +58,43 @@ class MyAccount extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildMenuOption("Mini Statement"),
-            _buildMenuOption("Check Balance",),
-            _buildMenuOption("Change M-PESA PIN",),
+            GestureDetector(
+              onTap: (){
+                Get.to(()=>MyTextFieldScreen(text: 'Enter M-PESA Pin', keyboardType: KeyboardType.numeric,));
+              },
+              child: Container(
+                  color: Colors.black.withOpacity(0),
+                  width: double.maxFinite,
+                  child: _buildMenuOption("Mini Statement")),
+            ),
+            GestureDetector(
+              onTap: (){
+                Get.to(()=>MyTextFieldScreen(text: 'Enter M-PESA Pin', keyboardType: KeyboardType.numeric,));
+              },
+              child: Container(
+                  color: Colors.black.withOpacity(0),
+                  width: double.maxFinite,
+                  child: _buildMenuOption("Check Balance",)),
+            ),
+            GestureDetector(
+              onTap: (){
+                Get.to(()=>MyTextFieldScreen(text: 'Enter Old Pin', keyboardType: KeyboardType.numeric,));
+              },
+              child: Container(
+                  color: Colors.black.withOpacity(0),
+                  width: double.maxFinite,
+                  child: _buildMenuOption("Change M-PESA PIN",)),
+            ),
             _buildMenuOption("Change Language",),
-           _buildMenuOption("Update Customer Menu",),
+           GestureDetector(
+             onTap: (){
+               Get.to(()=>MyTextFieldScreen(text: 'Enter M-PESA Pin', keyboardType: KeyboardType.numeric,));
+             },
+             child: Container(
+                 color: Colors.black.withOpacity(0),
+                 width: double.maxFinite,
+                 child: _buildMenuOption("Update Customer Menu",)),
+           ),
           ],
         ),
       ),
